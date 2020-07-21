@@ -9,3 +9,9 @@ exports.createArtist = (req, res) => {
 };
 /* Note the term artist above is arbitary, it could be named anything,
 but best pratice is to name it to indicate what it does. */
+
+exports.listsArtists = (req, res) => {
+    Artist.findAll({}).then(artist => res.status(200).json(artist));
+};
+
+
